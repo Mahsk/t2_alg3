@@ -5,12 +5,12 @@
 
 int main() {
     int qtd ;
-    int x, y ;  
+    float x, y ;  
     Ponto *p;
 
-    scanf("%d", &qtd) ;
+    scanf("%f", &qtd) ;
 
-    Vetor *pontos = cria_vetor(int qtd);
+    Vetor *pontos = cria_vetor(qtd);
 
     for(int i = 0; i < qtd; i++) {
 	
@@ -20,7 +20,10 @@ int main() {
   
         p = cria_ponto(x, y) ;
   
-        pontos[i] = p;
+        pontos->v[i] = *p;
+
+        free(p) ;
+        return 0 ;
 
     }
 }
