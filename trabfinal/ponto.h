@@ -1,6 +1,9 @@
 #ifndef PONTO_H
 #define PONTO_H
 
+#include <math.h>
+#include <stddef.h> 
+
 typedef struct {
     float x;// posicao na sequencia
     float y; // valor lido da entrada

@@ -1,5 +1,7 @@
 #include "ponto.h"
 
+
+
 // ta finalizada, só validar se funciona c o resto da implementaçao das outras funções
 
 Ponto *cria_ponto(int x, int y) {

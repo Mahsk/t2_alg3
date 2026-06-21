@@ -8,9 +8,9 @@ Vetor * cria_vetor(int tamanho) {
   if (v == NULL)
   	return NULL;
 
-  vetor->v = malloc(tamanho * sizeof(Ponto));
-  if (vetor->v == NULL) {
-      free(vetor);
+  v->vetor = malloc(tamanho * sizeof(Ponto));
+  if (v->vetor == NULL) {
+      free(v);
       return NULL;
     }
   
@@ -19,14 +19,14 @@ Vetor * cria_vetor(int tamanho) {
 }
 
 void insere_vetor(Vetor *v, Ponto p, int i) {
-  if (vetor != NULL && i >= 0 && i < vetor->tamanho) {
+  if (v != NULL && i >= 0 && i < v->tamanho) {
     v->vetor[i] = p;
 
     v->vetor[i].i_ant = i - 1;
     v->vetor[i].i_prox = i + 1;
 
 
-    if (i == vetor->tamanho - 1) {
+    if (i == v->tamanho - 1) {
       v->vetor[i].i_prox = -1;
     }
   }
@@ -34,7 +34,7 @@ void insere_vetor(Vetor *v, Ponto p, int i) {
 
 
 float remove_vetor(Vetor *v, int i) {
-  if (vetor == NULL || I < 0 || i>= vetor->tamanho)
+  if (v == NULL || i < 0 || i >= v->tamanho)
     return -1.0f;
 
     Ponto *p = &(v->vetor[i]);
@@ -42,7 +42,7 @@ float remove_vetor(Vetor *v, int i) {
     int prox = p->i_prox;
 
     v->vetor[p->i_ant].i_prox = p->i_prox;
-    v->v[p->i_prox].i_ant = p->i_ant;
+    v->vetor[p->i_prox].i_ant = p->i_ant;
 
     p->removido = 1;
 
@@ -52,7 +52,7 @@ float remove_vetor(Vetor *v, int i) {
 
 void destroi_vetor(Vetor *vetor) {
     if (vetor != NULL) {
-        free(vetor->v);
+        free(vetor->vetor);
         free(vetor);
     }
 }

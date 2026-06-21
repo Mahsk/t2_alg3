@@ -20,7 +20,7 @@ int main() {
   
         p = cria_ponto(x, y) ;
   
-        pontos->v[i] = *p;
+        pontos->vetor[i] = *p;
 
         free(p) ;
         return 0 ;
