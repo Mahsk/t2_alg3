@@ -2,6 +2,8 @@
 #define VETOR_H
 
 #include "ponto.h"
+#include <stdlib.h>
+
 
 typedef struct {
 	Ponto *vetor;

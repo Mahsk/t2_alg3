@@ -37,16 +37,16 @@ float remove_vetor(Vetor *v, int i) {
   if (v == NULL || i < 0 || i >= v->tamanho)
     return -1.0f;
 
-    Ponto *p = &(v->vetor[i]);
-    int ant = p->i_ant;
-    int prox = p->i_prox;
+  Ponto *p = &(v->vetor[i]);
+  int ant = p->i_ant;
+  int prox = p->i_prox;
 
-    v->vetor[p->i_ant].i_prox = p->i_prox;
-    v->vetor[p->i_prox].i_ant = p->i_ant;
+  v->vetor[ant].i_prox = p->i_prox;
+  v->vetor[prox].i_ant = p->i_ant;
 
-    p->removido = 1;
+  p->removido = 1;
 
-    return p->custo;
+  return p->custo;
 }
 
 

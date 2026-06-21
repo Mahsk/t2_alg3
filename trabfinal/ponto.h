@@ -3,6 +3,7 @@
 
 #include <math.h>
 #include <stddef.h> 
+#include <stdlib.h>
 
 typedef struct {
     float x;// posicao na sequencia
@@ -15,6 +16,9 @@ typedef struct {
     int posheap; // posicao no heap (-1 se fora)
     int removido; // 1 se ja foi eliminado
 } Ponto;
+
+Ponto *cria_ponto(int x, int y) ; 
+
 
 // area_triangulo
 // retorna a area do triangulo formado por tres pontos

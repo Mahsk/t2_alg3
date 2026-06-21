@@ -1,11 +1,6 @@
 // ta finalizada, só validar se funciona c o resto da implementaçao das outras funções
 #include "heap.h"
 
-typedef struct {
-    int *dados;
-    int  tamanho;
-} Heap;
-
 static void heap_troca(Heap *h, Ponto *pontos, int i, int j) {
     int tmp     = h->dados[i];
     h->dados[i] = h->dados[j];

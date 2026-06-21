@@ -13,7 +13,7 @@ Ponto *cria_ponto(int x, int y) {
   p->i_prox = x+1;
   p->i_ant = x-1;
   p->custo = INFINITY;
-  p->posheap = NAN;
+  p->posheap = -1;
   return p;
 }
 

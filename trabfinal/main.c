@@ -1,14 +1,18 @@
-#include "stdio.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "heap.h"
 #include "ponto.h"
 #include "vetor.h"
 #include "io.h"
 
-int main() {
+int main(int argc, char *argv[]) {
     int qtd ;
     float x, y ;  
     Ponto *p;
 
-    scanf("%f", &qtd) ;
+    //le a qntdd de pontos
+    scanf("%d", &qtd) ;
 
     Vetor *pontos = cria_vetor(qtd);
 
@@ -22,8 +26,11 @@ int main() {
   
         pontos->vetor[i] = *p;
 
-        free(p) ;
-        return 0 ;
-
     }
+
+    imprime_saida(pontos) ;
+
+    destroi_vetor(pontos) ;
+    
+    return 0 ;
 }
