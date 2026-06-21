@@ -2,6 +2,19 @@
 
 // ta finalizada, só validar se funciona c o resto da implementaçao das outras funções
 
+Ponto *cria_ponto(int x, int y) {
+	Ponto *p = malloc(sizeof(Ponto));
+  if (p == NULL)
+  	return NULL;
+  p->x = x;
+  p->y = y;
+  p->i_prox = x+1;
+  p->i_ant = x-1;
+  p->custo = INFINITY;
+  p->posheap = NAN;
+  return p;
+}
+
 float area_triangulo(float x1, float y1,
                      float x2, float y2,
                      float x3, float y3) {

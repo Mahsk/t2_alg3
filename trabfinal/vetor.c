@@ -2,25 +2,58 @@
 #include "vetor.h"
 // adicionei as structs ponto e vetor no ponto.h e vetor.h
 
-Ponto *cria_ponto(int x, int y) {
-	Ponto *p = malloc(sizeof(Ponto));
-  if (p == NULL)
-  	return NULL;
-  p->x = x;
-  p->y = y;
-  p->i_prox = x+1;
-  p->i_ant = x-1;
-  p->custo = INFINITY;
-  p->posheap = NAN;
-  return p;
-}
 
 Vetor * cria_vetor(int tamanho) {
 	Vetor *v = malloc(sizeof(Vetor));
   if (v == NULL)
   	return NULL;
+
+  vetor->v = malloc(tamanho * sizeof(Ponto));
+  if (vetor->v == NULL) {
+      free(vetor);
+      return NULL;
+    }
   
-  v->pontos = malloc(tamanho*sizeof(pontos));
+  v->tamanho = tamanho;
+  return v;
 }
 
-..................
+void insere_vetor(Vetor *v, Ponto p, int i) {
+  if (vetor != NULL && i >= 0 && i < vetor->tamanho) {
+    v->vetor[i] = p;
+
+    v->vetor[i].i_ant = i - 1;
+    v->vetor[i].i_prox = i + 1;
+
+
+    if (i == vetor->tamanho - 1) {
+      v->vetor[i].i_prox = -1;
+    }
+  }
+}
+
+
+float remove_vetor(Vetor *v, int i) {
+  if (vetor == NULL || I < 0 || i>= vetor->tamanho)
+    return -1.0f;
+
+    Ponto *p = &(v->vetor[i]);
+    int ant = p->i_ant;
+    int prox = p->i_prox;
+
+    v->vetor[p->i_ant].i_prox = p->i_prox;
+    v->v[p->i_prox].i_ant = p->i_ant;
+
+    p->removido = 1;
+
+    return p->custo;
+}
+
+
+void destroi_vetor(Vetor *vetor) {
+    if (vetor != NULL) {
+        free(vetor->v);
+        free(vetor);
+    }
+}
+
