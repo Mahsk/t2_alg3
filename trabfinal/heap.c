@@ -61,3 +61,18 @@ void heap_update(Heap *h, Ponto *pontos, int idx) {
     heapify_up(h, pontos, pos);
     heapify_down(h, pontos, pontos[idx].posheap);
 }
+
+Heap *cria_heap(int capacidade) {
+    Heap *h = malloc(sizeof(Heap));
+    h->dados = malloc(capacidade * sizeof(int));
+    h->tamanho = 0;
+    return h;
+}
+
+
+void destroi_heap(Heap *h) {
+    if (h != NULL) {
+        free(h->dados);
+        free(h);
+    }
+}

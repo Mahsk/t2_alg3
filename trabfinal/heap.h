@@ -23,4 +23,8 @@ int heap_delete_min(Heap *h, Ponto *pontos);
 // atualiza a posicao de um ponto no heap
 void heap_update(Heap *h, Ponto *pontos, int idx);
 
+Heap *cria_heap(int capacidade);
+
+void destroi_heap(Heap *h);
+
 #endif

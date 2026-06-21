@@ -17,7 +17,6 @@ typedef struct {
     int removido; // 1 se ja foi eliminado
 } Ponto;
 
-Ponto *cria_ponto(int x, int y) ; 
 
 
 // area_triangulo
